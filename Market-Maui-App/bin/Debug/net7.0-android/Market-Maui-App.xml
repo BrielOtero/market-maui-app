@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Market-Maui-App</name>
+    </assembly>
+    <members>
+        <member name="P:Market_Maui_App.ViewModel.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.BaseViewModel.isBusy"/>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.BaseViewModel.Title">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.BaseViewModel.title"/>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.ProductsViewModel.getProductsCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductsViewModel.GetProductsCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.ProductsViewModel.GetProductsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductsViewModel.GetProductsAsync"/>.</summary>
+        </member>
+    </members>
+</doc>

@@ -3,7 +3,7 @@ using Market_Maui_App.Services;
 
 namespace Market_Maui_App.ViewModel;
 
-internal partial class ProductsViewModel : BaseViewModel
+public partial class ProductsViewModel : BaseViewModel
 {
     ProductService productService;
     public ObservableCollection<Product> Products { get; set; } = new();

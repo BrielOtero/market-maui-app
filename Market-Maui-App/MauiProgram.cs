@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Market_Maui_App.Services;
+using Market_Maui_App.View;
+using Microsoft.Extensions.Logging;
 
 namespace Market_Maui_App;
 
@@ -14,10 +16,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-
-#if DEBUG
-		builder.Logging.AddDebug();
-#endif
+		builder.Services.AddSingleton<ProductService>();
+		builder.Services.AddSingleton<ProductsViewModel>();
+		builder.Services.AddSingleton<MainPage>();
 
 		return builder.Build();
 	}

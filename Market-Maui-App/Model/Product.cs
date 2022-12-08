@@ -1,6 +1,6 @@
 ﻿namespace Market_Maui_App.Model;
 
-internal class Product
+public class Product
 {
     public int Id { get; set; }
     public string Name { get; set; }

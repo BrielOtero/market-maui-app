@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 
 namespace Market_Maui_App.Services;
 
-internal class ProductService
+public class ProductService
 {
     HttpClient httpClient;
 
