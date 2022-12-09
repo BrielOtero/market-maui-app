@@ -10,40 +10,72 @@
     <Grid 
           ColumnDefinitions="*,*"
           ColumnSpacing="5"
-          RowDefinitions="*,Auto"
+          RowDefinitions="Auto,*,Auto"
           RowSpacing="0">
 
+        <SearchBar 
+             Grid.Row="0"
+             Grid.ColumnSpan="2"
+             Placeholder="Insert text to filter"/>
 
-        <CollectionView 
-                    BackgroundColor="Transparent"
-                    Grid.ColumnSpan="2"
+        <RefreshView 
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Command="{Binding GetProductsCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+            <ContentView>
+                <CollectionView 
                     ItemsSource="{Binding Products}"
                     SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Product">
-                    <Grid Padding="10">
-                        <Frame HeightRequest="125">
-                            <Label Text="{Binding Name}"/>
-                        </Frame>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Product">
+                            <Grid Padding="10">
+                                <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToDetailsCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                    </Frame.GestureRecognizers>
+                                    <Grid Padding="0" ColumnDefinitions="125,*">
+                                        <Image 
+                                            Source="{Binding Image}"
+                                            Aspect="AspectFill"
+                                            HeightRequest="125"
+                                            WidthRequest="125" />
 
-        </CollectionView>
+                                        <VerticalStackLayout
+                                      Grid.Column="1"
+                                      VerticalOptions="Center"
+                                      Padding="10">
+                                            <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}"/>
+                                            <Label Style="{StaticResource MediumLabel}" Text="{Binding Stock}" />
+                                            <Label Style="{StaticResource MediumLabel}" Text="{Binding Target_Stock}" />
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ContentView>
+        </RefreshView>
 
-        <Button Text="Get Products"
-                Command="{Binding GetProductsCommand}"
-                IsEnabled="{Binding IsNotBusy}"
-                Grid.Row="1"
-                Margin="8"/>
-        <ActivityIndicator IsVisible="{Binding IsBusy}"
-                               IsRunning="{Binding IsBusy}"
-                               HorizontalOptions="FillAndExpand"
-                               VerticalOptions="CenterAndExpand"
-                               Grid.RowSpan="2"
-                               Grid.ColumnSpan="2"/>
+        <Button 
+            Text="Get Products"
+            Command="{Binding GetProductsCommand}"
+            IsEnabled="{Binding IsNotBusy}"
+            Style="{StaticResource ButtonOutline}"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Margin="8"/>
 
-
+        <ActivityIndicator 
+            IsVisible="{Binding IsBusy}"
+            IsRunning="{Binding IsBusy}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Grid.RowSpan="2"
+            Color="{StaticResource Primary}"
+            Grid.ColumnSpan="2"/>
     </Grid>
-
 </ContentPage>

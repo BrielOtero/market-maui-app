@@ -13,6 +13,10 @@ public partial class ProductsViewModel : BaseViewModel
         this.productService = productService;
     }
 
+    [ObservableProperty]
+    bool isRefreshing;
+
+
     [RelayCommand]
     async Task GetProductsAsync()
     {
@@ -25,14 +29,10 @@ public partial class ProductsViewModel : BaseViewModel
             var products = await productService.GetProducts();
 
             if (Products.Count != 0)
-            {
                 Products.Clear();
-            }
 
             foreach (var product in products)
-            {
                 Products.Add(product);
-            }
         }
         catch (Exception ex)
         {
@@ -42,7 +42,19 @@ public partial class ProductsViewModel : BaseViewModel
         finally
         {
             IsBusy = false;
+            IsRefreshing = false;
 
         }
+    }
+
+    [RelayCommand]
+    async Task GoToDetails(Product product)
+    {
+        if (product == null) return;
+
+        await Shell.Current.GoToAsync(nameof(DetailsPage), true, new Dictionary<string, object>
+        {
+            {"Product",product }
+        });
     }
 }

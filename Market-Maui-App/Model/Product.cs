@@ -8,5 +8,5 @@ public class Product
     public string Ref_Alcampo { get; set; }
     public string Ref_Carrefour { get; set; }
     public int Stock { get; set; }
-    public int TargeStock { get; set; }
+    public int Target_Stock { get; set; }
 }

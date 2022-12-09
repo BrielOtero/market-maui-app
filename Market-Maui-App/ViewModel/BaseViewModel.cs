@@ -10,4 +10,9 @@ public partial class BaseViewModel: ObservableObject
     string title;
 
     public bool IsNotBusy=>!isBusy;
+
+
+
+
+
 }
