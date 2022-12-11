@@ -27,11 +27,11 @@ public class ProductService
     }
     public async Task NewProduct(Product product)
     {
-        var payload = JsonSerializer.Serialize(product);
-        StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
-        Debug.WriteLine(content.ToString());
-        await httpClient.PostAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products",content);
-      
+       var payload = JsonSerializer.Serialize(product);
+        StringContent content = new StringContent(payload);
+        Debug.WriteLine(payload);
+       var result= await httpClient.PostAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/product", content);
+        Debug.WriteLine(result);
 
     }
 }
