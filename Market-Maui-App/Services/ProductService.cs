@@ -1,5 +1,6 @@
 ﻿
 using System.Net.Http.Json;
+using System.Text;
 
 namespace Market_Maui_App.Services;
 
@@ -23,5 +24,14 @@ public class ProductService
         }
 
         return productList;
+    }
+    public async Task NewProduct(Product product)
+    {
+        var payload = JsonSerializer.Serialize(product);
+        StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
+        Debug.WriteLine(content.ToString());
+        await httpClient.PostAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products",content);
+      
+
     }
 }

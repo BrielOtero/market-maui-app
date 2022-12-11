@@ -1,4 +1,5 @@
-﻿using Market_Maui_App.Services;
+﻿using CommunityToolkit.Maui;
+using Market_Maui_App.Services;
 using Market_Maui_App.View;
 using Microsoft.Extensions.Logging;
 
@@ -11,6 +12,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -21,7 +23,10 @@ public static class MauiProgram
 		builder.Services.AddSingleton<MainPage>();
 
 		builder.Services.AddTransient<ProductDetailsViewModel>();
+        builder.Services.AddTransient<ProductAddViewModel>();
         builder.Services.AddTransient<DetailsPage>();
+        builder.Services.AddTransient<AddPage>();
+
 
         return builder.Build();
 	}

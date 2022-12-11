@@ -3,24 +3,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:Market_Maui_App.Model"
              xmlns:viewmodel="clr-namespace:Market_Maui_App.ViewModel"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              x:DataType="viewmodel:ProductsViewModel"
              Title="{Binding Title}"
-             x:Class="Market_Maui_App.View.MainPage">
+             x:Class="Market_Maui_App.View.MainPage"
+             BackgroundColor="{StaticResource Primary}">
+    <Page.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{StaticResource Primary}"/>
+    </Page.Behaviors>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            IconImageSource="addwhite.png"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToAddCommand}"
+            CommandParameter="{Binding .}"/>
+    </ContentPage.ToolbarItems>
 
     <Grid 
-          ColumnDefinitions="*,*"
-          ColumnSpacing="5"
-          RowDefinitions="Auto,*,Auto"
+          ColumnDefinitions="*"
+          RowDefinitions="Auto,Auto,*"
           RowSpacing="0">
 
+        <BoxView
+                Color="{StaticResource Primary}"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"/>
+        <!--
         <SearchBar 
+             HorizontalOptions="FillAndExpand"
              Grid.Row="0"
+             Margin="10,20,10,20"
              Grid.ColumnSpan="2"
              Placeholder="Insert text to filter"/>
+        -->
 
+        <BoxView  
+                Style="{DynamicResource Dinamic}"
+                Grid.Row="2"
+                Grid.ColumnSpan="1"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Margin="0,0,0,-10"
+                CornerRadius="20"/>
+        
         <RefreshView 
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
+            Grid.Row="2"
+            Grid.ColumnSpan="1"
+            Margin="0,0,0,0"
             Command="{Binding GetProductsCommand}"
             IsRefreshing="{Binding IsRefreshing}">
             <ContentView>
@@ -29,28 +60,41 @@
                     SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Product">
-                            <Grid Padding="10">
-                                <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                            <Grid Padding="20,20,20,10" >
+                                <Frame  Style="{StaticResource CardView}" >
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer 
                                             Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToDetailsCommand}"
                                             CommandParameter="{Binding .}"/>
                                     </Frame.GestureRecognizers>
-                                    <Grid Padding="0" ColumnDefinitions="125,*">
-                                        <Image 
-                                            Source="{Binding Image}"
-                                            Aspect="AspectFill"
-                                            HeightRequest="125"
-                                            WidthRequest="125" />
+                                    
+                                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,*,*">
 
-                                        <VerticalStackLayout
-                                      Grid.Column="1"
-                                      VerticalOptions="Center"
-                                      Padding="10">
-                                            <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}"/>
-                                            <Label Style="{StaticResource MediumLabel}" Text="{Binding Stock}" />
-                                            <Label Style="{StaticResource MediumLabel}" Text="{Binding Target_Stock}" />
-                                        </VerticalStackLayout>
+                                        <Border StrokeShape="RoundRectangle 20"
+                                            Grid.Column="0" 
+                                            Grid.RowSpan="3"
+                                            Stroke="{StaticResource Black}"
+                                            StrokeThickness="0"
+                                            Margin="5,5,5,5"
+                                            MaximumHeightRequest="220"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center">
+
+                                            <Image Source="{Binding Image}"
+                                               Aspect="AspectFit"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+                                        </Border>
+
+                                        <Label  Style="{DynamicResource Big}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                                        <BoxView Style="{DynamicResource DinamicMain}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+
+                                        <Label Style="{DynamicResource MediumMain}" Text="Stock"  Grid.Row="1" Grid.Column="1" />
+                                        <Label Style="{DynamicResource MediumMain}" Text="{Binding Stock}"  Grid.Row="1" Grid.Column="2" />
+                                        <Label Style="{DynamicResource MediumMain}" Text="Target"  Grid.Row="2" Grid.Column="1" />
+                                        <Label Style="{DynamicResource MediumMain}" Text="{Binding Target_Stock}"   Grid.Row="2" Grid.Column="2"/>
+
                                     </Grid>
                                 </Frame>
                             </Grid>
@@ -59,23 +103,5 @@
                 </CollectionView>
             </ContentView>
         </RefreshView>
-
-        <Button 
-            Text="Get Products"
-            Command="{Binding GetProductsCommand}"
-            IsEnabled="{Binding IsNotBusy}"
-            Style="{StaticResource ButtonOutline}"
-            Grid.Row="2"
-            Grid.ColumnSpan="2"
-            Margin="8"/>
-
-        <ActivityIndicator 
-            IsVisible="{Binding IsBusy}"
-            IsRunning="{Binding IsBusy}"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="CenterAndExpand"
-            Grid.RowSpan="2"
-            Color="{StaticResource Primary}"
-            Grid.ColumnSpan="2"/>
     </Grid>
 </ContentPage>

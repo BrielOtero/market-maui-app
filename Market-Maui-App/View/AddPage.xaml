@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Market_Maui_App.AddPage"
+              xmlns:viewmodel="clr-namespace:Market_Maui_App.ViewModel"
+             x:DataType="viewmodel:ProductAddViewModel"
+             Title="New Product"
+             Background="{StaticResource Primary}">
+
+    <Grid 
+       ColumnDefinitions="*"
+       RowDefinitions="*,Auto">
+
+        <BoxView 
+             Style="{DynamicResource Dinamic}"
+             Grid.RowSpan="2"
+             HorizontalOptions="Fill"
+             VerticalOptions="Fill"
+             Margin="0,0,0,-20"
+             CornerRadius="20"/>
+
+        <VerticalStackLayout  Grid.Row="0" Margin="20,50,20,0" Spacing="10">
+            <Label Text="Name:" Style="{DynamicResource Low}"/>
+            <Entry Placeholder="Name" Text="{Binding Name}"/>
+            <Label Text="Url Image:" Style="{DynamicResource Low}"/>
+            <Entry Placeholder="Url Image" Text="{Binding Image}"/>
+            <Label Text="Reference Alcampo:" Style="{DynamicResource Low}"/>
+            <Entry Placeholder="Reference Alcampo"  Text="{Binding Ref_Alcampo}"/>
+            <Label Text="Reference Carrefour:" Style="{DynamicResource Low}"/>
+            <Entry Placeholder="Reference Carrefour" Text="{Binding Ref_Carrefour}"/>
+            
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Fill">
+                <Label Text="Stock" VerticalTextAlignment="Center" FontSize="22"  MinimumWidthRequest="80"/>
+                <Button Text="-" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductAddViewModel}}, Path=DeStockCommand}"/>
+                <Label Text="{x:Binding Stock}" VerticalTextAlignment="Center" FontSize="22"/>
+                <Button Text="+" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductAddViewModel}}, Path=InStockCommand}"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Fill">
+                <Label Text="Target" VerticalTextAlignment="Center" FontSize="22" MinimumWidthRequest="80"/>
+                <Button Text="-" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductAddViewModel}}, Path=DeTargetCommand}"/>
+                <Label Text="{x:Binding Target}" VerticalTextAlignment="Center" FontSize="22"/>
+                <Button Text="+" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductAddViewModel}}, Path=InTargetCommand}"/>
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+
+        <Button Text="Add" Grid.Row="1" Style="{StaticResource ButtonOutline}" Margin="20,50,20,20" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductAddViewModel}}, Path=AddCommand}"/>
+    </Grid>
+
+
+</ContentPage>

@@ -1,5 +1,6 @@
 ﻿
 using Market_Maui_App.Services;
+using Market_Maui_App.View;
 
 namespace Market_Maui_App.ViewModel;
 
@@ -11,6 +12,7 @@ public partial class ProductsViewModel : BaseViewModel
     {
         Title = "Market";
         this.productService = productService;
+        GetProductsAsync();
     }
 
     [ObservableProperty]
@@ -28,8 +30,7 @@ public partial class ProductsViewModel : BaseViewModel
 
             var products = await productService.GetProducts();
 
-            if (Products.Count != 0)
-                Products.Clear();
+            Products.Clear();
 
             foreach (var product in products)
                 Products.Add(product);
@@ -56,5 +57,11 @@ public partial class ProductsViewModel : BaseViewModel
         {
             {"Product",product }
         });
+    }
+
+    [RelayCommand]
+    async Task GoToAdd()
+    {
+        await Shell.Current.GoToAsync(nameof(AddPage), true);
     }
 }

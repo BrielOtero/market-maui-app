@@ -4,25 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodel="clr-namespace:Market_Maui_App.ViewModel"
-    Title="{Binding Product.Name}"
-    x:DataType="viewmodel:ProductDetailsViewModel">
+    x:DataType="viewmodel:ProductDetailsViewModel"
+    BackgroundColor="{StaticResource Primary}">
 
     <ScrollView>
         <Grid RowDefinitions="Auto,Auto,*">
             <BoxView
-                BackgroundColor="{StaticResource Primary}"
+                Color="{StaticResource Primary}"
                 Grid.RowSpan="2"
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"/>
 
             <Border StrokeShape="RoundRectangle 80"
+                    Grid.Row="0"
                     Stroke="White"
-                    StrokeThickness="6"
+                    StrokeThickness="8"
                     HeightRequest="160"
                     WidthRequest="160"
                     Margin="0,8,0,0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
+                
                 <Image Aspect="AspectFill"
                         HeightRequest="160"
                         HorizontalOptions="Center"
@@ -34,22 +36,32 @@
             <Label Style="{StaticResource LargeLabel}" 
                    Grid.Row="1"
                    TextColor="White"
+                   FontSize="30"
                    FontAttributes="Bold"
                    Text="{Binding Product.Name}" 
                    HorizontalOptions="Center"
-                   Margin="0,0,0,8"/>
-
+                   Margin="0,20,0,20"/>
+        
+            <BoxView  
+                Style="{DynamicResource Dinamic}"
+                Grid.Row="2"
+                Grid.RowSpan="1"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Margin="0,0,0,-20"
+                CornerRadius="20"/>
+        
             <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
-                <!-- Add this -->
-                <Button Text="Edit" 
-                        HorizontalOptions="Center" 
-                        WidthRequest="200" 
-                        Margin="8"
-                        Style="{StaticResource ButtonOutline}"/>
-
-                <Label Style="{StaticResource SmallLabel}" Text="{Binding Product.Stock, StringFormat='Stock: {0}'}" />
-                <Label Style="{StaticResource SmallLabel}" Text="{Binding Product.Target_Stock, StringFormat='Target Stock: {0}'}" />
+                <Label Style="{StaticResource MediumLabel}" FontSize="20" Text="{Binding Product.Stock, StringFormat='Stock: {0}'}" />
+                <Label Style="{StaticResource MediumLabel}" FontSize="20" Text="{Binding Product.Target_Stock, StringFormat='Target Stock: {0}'}" />
+                <Button
+                    Text="I ate one 🤪" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="200" 
+                    Margin="8"
+                    Style="{StaticResource ButtonOutline}"/>
             </VerticalStackLayout>
+            
         </Grid>
     </ScrollView>
 </ContentPage>
