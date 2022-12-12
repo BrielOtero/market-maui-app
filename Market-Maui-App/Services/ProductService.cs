@@ -12,7 +12,6 @@ public class ProductService
     {
         this.httpClient = new HttpClient();
     }
-
     List<Product> productList;
 
     public async Task<List<Product>> GetProducts()
@@ -33,14 +32,13 @@ public class ProductService
         await httpClient.PostAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products", content);
 
     }
-    public async Task DecreaseStock(int id)
+    public async Task DecreaseStock(Product product)
     {
-        Debug.WriteLine(id);
-        int stock = productList[id].Stock - 1;
-        Debug.WriteLine(stock);
-        StringContent content = new StringContent( $"{{{"stock"}:{stock}}}", Encoding.UTF8, "application/json");
+        string payload = $"{{\"stock\":{product.Stock}}}";
+        Debug.WriteLine(payload);
+        StringContent content = new StringContent( payload, Encoding.UTF8, "application/json");
 
-        await httpClient.PatchAsync($"https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products/{id}", content);
+        await httpClient.PatchAsync($"https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products/{product.Id}", content);
     }
 }
 
