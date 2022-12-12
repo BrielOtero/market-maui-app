@@ -25453,24 +25453,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ID\\.nuget\\packages\\": {},
+    "C:\\Users\\Gabriel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ID\\git\\Market-Maui-App\\Market-Maui-App\\Market-Maui-App.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\git\\Market-Maui-App\\Market-Maui-App\\Market-Maui-App.csproj",
       "projectName": "Market-Maui-App",
-      "projectPath": "C:\\Users\\ID\\git\\Market-Maui-App\\Market-Maui-App\\Market-Maui-App.csproj",
-      "packagesPath": "C:\\Users\\ID\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ID\\git\\Market-Maui-App\\Market-Maui-App\\obj\\",
+      "projectPath": "C:\\Users\\Gabriel\\git\\Market-Maui-App\\Market-Maui-App\\Market-Maui-App.csproj",
+      "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabriel\\git\\Market-Maui-App\\Market-Maui-App\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ID\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

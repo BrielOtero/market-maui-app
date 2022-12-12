@@ -38,7 +38,7 @@
                    TextColor="White"
                    FontSize="30"
                    FontAttributes="Bold"
-                   Text="{Binding Product.Name}" 
+                   Text="{Binding Product.Id}" 
                    HorizontalOptions="Center"
                    Margin="0,20,0,20"/>
         
@@ -59,6 +59,8 @@
                     HorizontalOptions="Center" 
                     WidthRequest="200" 
                     Margin="8"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductDetailsViewModel}}, Path=DecreaseCommand}"
+                    CommandParameter="{Binding .}"
                     Style="{StaticResource ButtonOutline}"/>
             </VerticalStackLayout>
             

@@ -40,14 +40,14 @@
         -->
 
         <BoxView  
-                Style="{DynamicResource Dinamic}"
-                Grid.Row="2"
-                Grid.ColumnSpan="1"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill"
-                Margin="0,0,0,-10"
-                CornerRadius="20"/>
-        
+            Style="{DynamicResource Dinamic}"
+            Grid.Row="2"
+            Grid.ColumnSpan="1"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            Margin="0,0,0,-10"
+            CornerRadius="20"/>
+
         <RefreshView 
             Grid.Row="2"
             Grid.ColumnSpan="1"
@@ -76,7 +76,7 @@
                                             Stroke="{StaticResource Black}"
                                             StrokeThickness="0"
                                             Margin="5,5,5,5"
-                                            MaximumHeightRequest="220"
+                                            MaximumHeightRequest="150"
                                             HorizontalOptions="Center"
                                             VerticalOptions="Center">
 
@@ -88,7 +88,7 @@
 
                                         <Label  Style="{DynamicResource Big}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-                                        <BoxView Style="{DynamicResource DinamicMain}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                                        <BoxView Style="{DynamicResource DinamicMain}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
                                         <Label Style="{DynamicResource MediumMain}" Text="Stock"  Grid.Row="1" Grid.Column="1" />
                                         <Label Style="{DynamicResource MediumMain}" Text="{Binding Stock}"  Grid.Row="1" Grid.Column="2" />

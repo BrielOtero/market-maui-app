@@ -646,3 +646,7 @@ C:\Users\ID\git\Market-Maui-App\Market-Maui-App\bin\Debug\net7.0-windows10.0.190
 C:\Users\ID\git\Market-Maui-App\Market-Maui-App\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Core.dll
 C:\Users\ID\git\Market-Maui-App\Market-Maui-App\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png
 C:\Users\ID\git\Market-Maui-App\Market-Maui-App\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\addwhite.scale-100.png
+C:\Users\Gabriel\git\Market-Maui-App\Market-Maui-App\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.dll
+C:\Users\Gabriel\git\Market-Maui-App\Market-Maui-App\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Core.dll
+C:\Users\Gabriel\git\Market-Maui-App\Market-Maui-App\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png
+C:\Users\Gabriel\git\Market-Maui-App\Market-Maui-App\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\addwhite.scale-100.png

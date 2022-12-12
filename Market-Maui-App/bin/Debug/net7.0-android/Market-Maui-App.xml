@@ -61,6 +61,12 @@
         <member name="P:Market_Maui_App.ViewModel.ProductDetailsViewModel.Product">
             <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductDetailsViewModel.product"/>
         </member>
+        <member name="F:Market_Maui_App.ViewModel.ProductDetailsViewModel.decreaseCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductDetailsViewModel.DecreaseCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.ProductDetailsViewModel.DecreaseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductDetailsViewModel.Decrease"/>.</summary>
+        </member>
         <member name="P:Market_Maui_App.ViewModel.ProductsViewModel.IsRefreshing">
             <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductsViewModel.isRefreshing"/>
         </member>

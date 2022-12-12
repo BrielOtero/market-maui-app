@@ -25,13 +25,22 @@ public class ProductService
 
         return productList;
     }
-    public async Task NewProduct(Product product)
+    public async Task PostProduct(Product product)
     {
-       var payload = JsonSerializer.Serialize(product);
-        StringContent content = new StringContent(payload);
-        Debug.WriteLine(payload);
-       var result= await httpClient.PostAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/product", content);
-        Debug.WriteLine(result);
+        var payload = JsonSerializer.Serialize(product);
+        StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
+        Trace.WriteLine(payload);
+        await httpClient.PostAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products", content);
 
     }
+    public async Task DecreaseStock(int id)
+    {
+        Debug.WriteLine(id);
+        int stock = productList[id].Stock - 1;
+        Debug.WriteLine(stock);
+        StringContent content = new StringContent( $"{{{"stock"}:{stock}}}", Encoding.UTF8, "application/json");
+
+        await httpClient.PatchAsync($"https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products/{id}", content);
+    }
 }
+

@@ -59,10 +59,13 @@ public partial class ProductAddViewModel : BaseViewModel
     async Task Add()
     {
         if (String.IsNullOrEmpty(Name) || String.IsNullOrEmpty(Image) || String.IsNullOrEmpty(Ref_Alcampo) || String.IsNullOrEmpty(Ref_Carrefour))
+        {
             await Shell.Current.DisplayAlert("Error!", Name + Image + Ref_Alcampo + Ref_Carrefour, "Ok");
-        var product = new Product(Name, Image, Ref_Alcampo, Ref_Carrefour, Stock, Target);
-        productService.NewProduct(product);
+            return;
+        }
 
+        var product = new Product(Name, Image, Ref_Alcampo, Ref_Carrefour, Stock, Target);
+        productService.PostProduct(product);
 
     }
 }

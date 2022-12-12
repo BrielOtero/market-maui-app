@@ -8,51 +8,51 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Market_Maui_App
-build_property.ProjectDir = C:\Users\ID\git\Market-Maui-App\Market-Maui-App\
+build_property.ProjectDir = C:\Users\Gabriel\git\Market-Maui-App\Market-Maui-App\
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/App.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/AppShell.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/Resources/Styles/Colors.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/Resources/Styles/Styles.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/View/AddPage.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/View/AddPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.View.AddPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\AddPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\AddPage.xaml
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/View/DetailsPage.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/View/DetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.View.DetailsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\DetailsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\DetailsPage.xaml
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/View/MainPage.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/View/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.View.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
 
-[C:/Users/ID/git/Market-Maui-App/Market-Maui-App/View/UpdatePage.xaml]
+[C:/Users/Gabriel/git/Market-Maui-App/Market-Maui-App/View/UpdatePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Market_Maui_App.View.UpdatePage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\UpdatePage.xaml

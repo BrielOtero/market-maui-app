@@ -11,8 +11,4 @@ public partial class BaseViewModel: ObservableObject
 
     public bool IsNotBusy=>!isBusy;
 
-
-
-
-
 }
