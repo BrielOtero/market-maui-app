@@ -1,16 +1,14 @@
-﻿
-using Market_Maui_App.Services;
-
-namespace Market_Maui_App.ViewModel;
+﻿namespace Market_Maui_App.ViewModel;
 
 [QueryProperty(nameof(Product), "Product")]
 public partial class ProductDetailsViewModel : BaseViewModel
 {
+    ProductService productService;
+
     public ProductDetailsViewModel(ProductService productService)
     {
         this.productService = productService;
     }
-    ProductService productService;
 
     [ObservableProperty]
     Product product;
@@ -19,8 +17,9 @@ public partial class ProductDetailsViewModel : BaseViewModel
     [RelayCommand]
     async Task Decrease()
     {
-        Debug.WriteLine(Product.Id);
-        Product.Stock = Product.Stock - 1;
+        Product pro = new Product(Product.Name, Product.Image, Product.Stock - 1, Product.Target_Stock, Product.Ref_Alcampo, Product.Ref_Carrefour);
+        pro.Id = Product.Id;
+        Product = pro;
         await productService.DecreaseStock(Product);
     }
 

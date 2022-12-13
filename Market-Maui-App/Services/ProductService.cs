@@ -39,6 +39,8 @@ public class ProductService
         StringContent content = new StringContent( payload, Encoding.UTF8, "application/json");
 
         await httpClient.PatchAsync($"https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products/{product.Id}", content);
+
+        productList = await GetProducts();
     }
 }
 

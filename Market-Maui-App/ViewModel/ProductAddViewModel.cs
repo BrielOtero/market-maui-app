@@ -64,8 +64,8 @@ public partial class ProductAddViewModel : BaseViewModel
             return;
         }
 
-        var product = new Product(Name, Image, Ref_Alcampo, Ref_Carrefour, Stock, Target);
-        productService.PostProduct(product);
+        var product = new Product(Name, Image, Stock, Target, Ref_Alcampo, Ref_Carrefour);
+        await productService.PostProduct(product);
 
     }
 }

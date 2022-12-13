@@ -14,7 +14,7 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem 
-            IconImageSource="addwhite.png"
+            IconImageSource="add.png"
             Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToAddCommand}"
             CommandParameter="{Binding .}"/>
     </ContentPage.ToolbarItems>
@@ -45,13 +45,11 @@
             Grid.ColumnSpan="1"
             HorizontalOptions="Fill"
             VerticalOptions="Fill"
-            Margin="0,0,0,-10"
             CornerRadius="20"/>
 
         <RefreshView 
             Grid.Row="2"
             Grid.ColumnSpan="1"
-            Margin="0,0,0,0"
             Command="{Binding GetProductsCommand}"
             IsRefreshing="{Binding IsRefreshing}">
             <ContentView>
@@ -60,7 +58,7 @@
                     SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Product">
-                            <Grid Padding="20,20,20,10" >
+                            <Grid Padding="20,20,20,20" >
                                 <Frame  Style="{StaticResource CardView}" >
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer 
@@ -68,15 +66,14 @@
                                             CommandParameter="{Binding .}"/>
                                     </Frame.GestureRecognizers>
                                     
-                                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,*,*">
+                                    <Grid ColumnDefinitions="*,80,*,*" RowDefinitions="Auto,*,*">
 
                                         <Border StrokeShape="RoundRectangle 20"
                                             Grid.Column="0" 
-                                            Grid.RowSpan="3"
+                                            Grid.RowSpan="5"
                                             Stroke="{StaticResource Black}"
                                             StrokeThickness="0"
-                                            Margin="5,5,5,5"
-                                            MaximumHeightRequest="150"
+                                            MaximumHeightRequest="110"
                                             HorizontalOptions="Center"
                                             VerticalOptions="Center">
 
@@ -88,12 +85,15 @@
 
                                         <Label  Style="{DynamicResource Big}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-                                        <BoxView Style="{DynamicResource DinamicMain}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                                        <BoxView Style="{DynamicResource DinamicMain}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
 
-                                        <Label Style="{DynamicResource MediumMain}" Text="Stock"  Grid.Row="1" Grid.Column="1" />
-                                        <Label Style="{DynamicResource MediumMain}" Text="{Binding Stock}"  Grid.Row="1" Grid.Column="2" />
-                                        <Label Style="{DynamicResource MediumMain}" Text="Target"  Grid.Row="2" Grid.Column="1" />
-                                        <Label Style="{DynamicResource MediumMain}" Text="{Binding Target_Stock}"   Grid.Row="2" Grid.Column="2"/>
+                                        <Image Source="stock.png" Grid.Row="1" Grid.Column="1"  Aspect="AspectFit" Margin="15"  />
+                                        <Label Style="{DynamicResource MediumMain}" Text="Stock"  Grid.Row="1" Grid.Column="2" Margin="-70,0,0,0"/>
+                                        <Label Style="{DynamicResource MediumMain}" Text="{Binding Stock}"  Grid.Row="1" Grid.Column="3" />
+                                        
+                                        <Image Source="goal.png" Grid.Row="2" Grid.Column="1" Aspect="AspectFit"  Margin="15"  />
+                                        <Label Style="{DynamicResource MediumMain}" Text="Goal"  Grid.Row="2" Grid.Column="2" Margin="-70,0,0,0" />
+                                        <Label Style="{DynamicResource MediumMain}" Text="{Binding Target_Stock}"   Grid.Row="2" Grid.Column="3"/>
 
                                     </Grid>
                                 </Frame>

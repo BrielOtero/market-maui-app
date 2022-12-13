@@ -7,8 +7,15 @@
     x:DataType="viewmodel:ProductDetailsViewModel"
     BackgroundColor="{StaticResource Primary}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            IconImageSource="edit.png"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductDetailsViewModel}}, Path=GoToEditCommand}"
+            CommandParameter="{Binding .}"/>
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
-        <Grid RowDefinitions="Auto,Auto,*">
+        <Grid RowDefinitions="Auto,Auto,*,Auto">
             <BoxView
                 Color="{StaticResource Primary}"
                 Grid.RowSpan="2"
@@ -24,7 +31,7 @@
                     Margin="0,8,0,0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                
+
                 <Image Aspect="AspectFill"
                         HeightRequest="160"
                         HorizontalOptions="Center"
@@ -41,28 +48,41 @@
                    Text="{Binding Product.Name}" 
                    HorizontalOptions="Center"
                    Margin="0,20,0,20"/>
-        
+
             <BoxView  
                 Style="{DynamicResource Dinamic}"
                 Grid.Row="2"
-                Grid.RowSpan="1"
+                Grid.RowSpan="2"
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"
                 Margin="0,0,0,-20"
                 CornerRadius="20"/>
-        
+
             <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
-                <Label Style="{StaticResource MediumLabel}" FontSize="20" Text="{Binding Product.Stock, StringFormat='Stock: {0}'}" />
-                <Label Style="{StaticResource MediumLabel}" FontSize="20" Text="{Binding Product.Target_Stock, StringFormat='Target Stock: {0}'}" />
-                <Button
-                    Text="I ate one 🤪" 
-                    HorizontalOptions="Center" 
-                    WidthRequest="200" 
-                    Margin="8"
-                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductDetailsViewModel}}, Path=DecreaseCommand}"
-                    Style="{StaticResource ButtonOutline}"/>
+                <Frame Style="{DynamicResource Edit}">
+                    <HorizontalStackLayout>
+                        <VerticalStackLayout HorizontalOptions="Start">
+                            <Image Source="stock_color.png" Aspect="AspectFit" Margin="0"/>
+                            <Label Style="{StaticResource MediumDetails}"  Text="Stock" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                        <Label Style="{StaticResource MediumDetails}"  Text="{Binding Product.Stock}" HorizontalOptions="End"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame Style="{DynamicResource Edit}">
+                    <HorizontalStackLayout>
+                        <VerticalStackLayout HorizontalOptions="Start">
+                            <Image Source="goal_color.png" Aspect="AspectFit" Margin="0"/>
+                            <Label Style="{StaticResource MediumDetails}"  Text="Goal" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                        <Label Style="{StaticResource MediumDetails}"  Text="{Binding Product.Target_Stock}" HorizontalOptions="End"/>
+                    </HorizontalStackLayout>
+                </Frame>
             </VerticalStackLayout>
             
+            <Button Grid.Row="3"
+                    Text="I ate one 🤪" 
+                    HorizontalOptions="Center" 
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductDetailsViewModel}}, Path=DecreaseCommand}"/>
         </Grid>
     </ScrollView>
 </ContentPage>
