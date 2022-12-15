@@ -2,12 +2,18 @@
 
 public partial class MainPage : ContentPage
 {
-
-	public MainPage(ProductsViewModel viewModel)
+	private MainPageViewModel vm => BindingContext as MainPageViewModel;
+	public MainPage(MainPageViewModel viewModel)
 	{
 		InitializeComponent();
+		viewModel.GetProductsCommand.Execute(this);
 		BindingContext = viewModel;
 	}
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await vm.InitializeAsync();
+    }
 
 }
 

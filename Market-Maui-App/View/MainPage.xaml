@@ -4,24 +4,26 @@
              xmlns:model="clr-namespace:Market_Maui_App.Model"
              xmlns:viewmodel="clr-namespace:Market_Maui_App.ViewModel"
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
-             x:DataType="viewmodel:ProductsViewModel"
+             x:DataType="viewmodel:MainPageViewModel"
              Title="{Binding Title}"
              x:Class="Market_Maui_App.View.MainPage"
              BackgroundColor="{StaticResource Primary}">
+    
     <Page.Behaviors>
         <mct:StatusBarBehavior StatusBarColor="{StaticResource Primary}"/>
     </Page.Behaviors>
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             IconImageSource="add.png"
-            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToAddCommand}"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=GoToAddCommand}"
             CommandParameter="{Binding .}"/>
     </ContentPage.ToolbarItems>
 
     <Grid 
           ColumnDefinitions="*"
           RowDefinitions="Auto,Auto,*"
+          Margin="5,0,5,5"
           RowSpacing="0">
 
         <BoxView
@@ -58,14 +60,14 @@
                     SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Product">
-                            <Grid Padding="20,20,20,20" >
+                            <Grid Padding="17,20,15,17" >
                                 <Frame  Style="{StaticResource CardView}" >
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer 
-                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToDetailsCommand}"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=GoToDetailsCommand}"
                                             CommandParameter="{Binding .}"/>
                                     </Frame.GestureRecognizers>
-                                    
+
                                     <Grid ColumnDefinitions="*,80,*,*" RowDefinitions="Auto,*,*">
 
                                         <Border StrokeShape="RoundRectangle 20"
@@ -90,7 +92,7 @@
                                         <Image Source="stock.png" Grid.Row="1" Grid.Column="1"  Aspect="AspectFit" Margin="15"  />
                                         <Label Style="{DynamicResource MediumMain}" Text="Stock"  Grid.Row="1" Grid.Column="2" Margin="-70,0,0,0"/>
                                         <Label Style="{DynamicResource MediumMain}" Text="{Binding Stock}"  Grid.Row="1" Grid.Column="3" />
-                                        
+
                                         <Image Source="goal.png" Grid.Row="2" Grid.Column="1" Aspect="AspectFit"  Margin="15"  />
                                         <Label Style="{DynamicResource MediumMain}" Text="Goal"  Grid.Row="2" Grid.Column="2" Margin="-70,0,0,0" />
                                         <Label Style="{DynamicResource MediumMain}" Text="{Binding Target_Stock}"   Grid.Row="2" Grid.Column="3"/>

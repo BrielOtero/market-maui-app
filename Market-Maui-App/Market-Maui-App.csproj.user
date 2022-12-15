@@ -3,8 +3,8 @@
   <PropertyGroup>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugFramework>net7.0-android</ActiveDebugFramework>
-    <ActiveDebugProfile>Xiaomi Mi 9T Pro (Android 13.0 - API 33)</ActiveDebugProfile>
-    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
+    <ActiveDebugProfile>Pixel 6 Pro API 33 (Android 13.0 - API 33)</ActiveDebugProfile>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
     <DefaultDevice>Pixel_6_Pro_API_33</DefaultDevice>
     <SelectedDevice>pixel_5_-_api_33</SelectedDevice>
   </PropertyGroup>
@@ -18,7 +18,7 @@
     <MauiXaml Update="View\AddPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="View\UpdatePage.xaml">
+    <MauiXaml Update="View\ModifyPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

@@ -4,15 +4,17 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodel="clr-namespace:Market_Maui_App.ViewModel"
-    x:DataType="viewmodel:ProductDetailsViewModel"
+    x:DataType="viewmodel:DetailsPageViewModel"
     BackgroundColor="{StaticResource Primary}">
-
+    
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             IconImageSource="edit.png"
-            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductDetailsViewModel}}, Path=GoToEditCommand}"
-            CommandParameter="{Binding .}"/>
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DetailsPageViewModel}}, Path=GoToModifyCommand}"/>
     </ContentPage.ToolbarItems>
+
+  
 
     <ScrollView>
         <Grid RowDefinitions="Auto,Auto,*,Auto">
@@ -60,29 +62,33 @@
 
             <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
                 <Frame Style="{DynamicResource Edit}">
-                    <HorizontalStackLayout>
-                        <VerticalStackLayout HorizontalOptions="Start">
-                            <Image Source="stock_color.png" Aspect="AspectFit" Margin="0"/>
-                            <Label Style="{StaticResource MediumDetails}"  Text="Stock" HorizontalOptions="Center"/>
+                    <HorizontalStackLayout Spacing="200">
+                        <VerticalStackLayout  HorizontalOptions="StartAndExpand" >
+                            <Image Source="stock_color.png" Aspect="AspectFit" MinimumHeightRequest="60" MaximumWidthRequest="60"/>
+                            <Label Style="{StaticResource MediumDetails}" Text="Stock" HorizontalTextAlignment="Center" />
                         </VerticalStackLayout>
-                        <Label Style="{StaticResource MediumDetails}"  Text="{Binding Product.Stock}" HorizontalOptions="End"/>
+                        <Label Style="{StaticResource MediumDetails}" Text="{Binding Product.Stock}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     </HorizontalStackLayout>
                 </Frame>
                 <Frame Style="{DynamicResource Edit}">
-                    <HorizontalStackLayout>
-                        <VerticalStackLayout HorizontalOptions="Start">
-                            <Image Source="goal_color.png" Aspect="AspectFit" Margin="0"/>
-                            <Label Style="{StaticResource MediumDetails}"  Text="Goal" HorizontalOptions="Center"/>
+                    <HorizontalStackLayout Spacing="200">
+                        <VerticalStackLayout >
+                            <Image Source="goal_color.png" Aspect="AspectFit" MinimumHeightRequest="60" MaximumWidthRequest="60"/>
+                            <Label Style="{StaticResource MediumDetails}" Text="Goal" HorizontalTextAlignment="Center" />
                         </VerticalStackLayout>
-                        <Label Style="{StaticResource MediumDetails}"  Text="{Binding Product.Target_Stock}" HorizontalOptions="End"/>
+                        <Label Style="{StaticResource MediumDetails}" Text="{Binding Product.Target_Stock}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     </HorizontalStackLayout>
                 </Frame>
             </VerticalStackLayout>
-            
+
             <Button Grid.Row="3"
+                    Margin="10"
+                    MinimumWidthRequest="600"
+                    MinimumHeightRequest="40"
+                    FontSize="20"
                     Text="I ate one 🤪" 
                     HorizontalOptions="Center" 
-                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductDetailsViewModel}}, Path=DecreaseCommand}"/>
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DetailsPageViewModel}}, Path=DecreaseCommand}"/>
         </Grid>
     </ScrollView>
 </ContentPage>

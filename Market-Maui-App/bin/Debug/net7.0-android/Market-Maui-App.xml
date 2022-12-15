@@ -4,89 +4,158 @@
         <name>Market-Maui-App</name>
     </assembly>
     <members>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.Name">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.AddPageViewModel.name"/>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.Image">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.AddPageViewModel.image"/>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.Ref_Alcampo">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.AddPageViewModel.ref_Alcampo"/>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.Ref_Carrefour">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.AddPageViewModel.ref_Carrefour"/>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.Stock">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.AddPageViewModel.stock"/>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.Target">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.AddPageViewModel.target"/>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.AddPageViewModel.deStockCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.AddPageViewModel.DeStockCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.DeStockCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.AddPageViewModel.DeStock"/>.</summary>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.AddPageViewModel.inStockCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.AddPageViewModel.InStockCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.InStockCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.AddPageViewModel.InStock"/>.</summary>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.AddPageViewModel.deTargetCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.AddPageViewModel.DeTargetCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.DeTargetCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.AddPageViewModel.DeTarget"/>.</summary>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.AddPageViewModel.inTargetCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.AddPageViewModel.InTargetCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.InTargetCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.AddPageViewModel.InTarget"/>.</summary>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.AddPageViewModel.addCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.AddPageViewModel.AddCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.AddPageViewModel.AddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.AddPageViewModel.Add"/>.</summary>
+        </member>
         <member name="P:Market_Maui_App.ViewModel.BaseViewModel.IsBusy">
             <inheritdoc cref="F:Market_Maui_App.ViewModel.BaseViewModel.isBusy"/>
         </member>
         <member name="P:Market_Maui_App.ViewModel.BaseViewModel.Title">
             <inheritdoc cref="F:Market_Maui_App.ViewModel.BaseViewModel.title"/>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.Name">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductAddViewModel.name"/>
+        <member name="P:Market_Maui_App.ViewModel.DetailsPageViewModel.Product">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.DetailsPageViewModel.product"/>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.Image">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductAddViewModel.image"/>
+        <member name="F:Market_Maui_App.ViewModel.DetailsPageViewModel.decreaseCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.DetailsPageViewModel.DecreaseCommand"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.Ref_Alcampo">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductAddViewModel.ref_Alcampo"/>
+        <member name="P:Market_Maui_App.ViewModel.DetailsPageViewModel.DecreaseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.DetailsPageViewModel.Decrease"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.Ref_Carrefour">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductAddViewModel.ref_Carrefour"/>
+        <member name="F:Market_Maui_App.ViewModel.DetailsPageViewModel.goToModifyCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.DetailsPageViewModel.GoToModifyCommand"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.Stock">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductAddViewModel.stock"/>
+        <member name="P:Market_Maui_App.ViewModel.DetailsPageViewModel.GoToModifyCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.DetailsPageViewModel.GoToModify"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.Target">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductAddViewModel.target"/>
+        <member name="P:Market_Maui_App.ViewModel.MainPageViewModel.IsRefreshing">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.MainPageViewModel.isRefreshing"/>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductAddViewModel.deStockCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductAddViewModel.DeStockCommand"/>.</summary>
+        <member name="F:Market_Maui_App.ViewModel.MainPageViewModel.getProductsCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.MainPageViewModel.GetProductsCommand"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.DeStockCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductAddViewModel.DeStock"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.MainPageViewModel.GetProductsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.MainPageViewModel.GetProductsAsync"/>.</summary>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductAddViewModel.inStockCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductAddViewModel.InStockCommand"/>.</summary>
+        <member name="F:Market_Maui_App.ViewModel.MainPageViewModel.goToDetailsCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.MainPageViewModel.GoToDetailsCommand"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.InStockCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductAddViewModel.InStock"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.MainPageViewModel.GoToDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.MainPageViewModel.GoToDetails(Market_Maui_App.Model.Product)"/>.</summary>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductAddViewModel.deTargetCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductAddViewModel.DeTargetCommand"/>.</summary>
+        <member name="F:Market_Maui_App.ViewModel.MainPageViewModel.goToAddCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.MainPageViewModel.GoToAddCommand"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.DeTargetCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductAddViewModel.DeTarget"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.MainPageViewModel.GoToAddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.MainPageViewModel.GoToAdd"/>.</summary>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductAddViewModel.inTargetCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductAddViewModel.InTargetCommand"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.Product">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.ModifyPageViewModel.product"/>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.InTargetCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductAddViewModel.InTarget"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.Name">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.ModifyPageViewModel.name"/>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductAddViewModel.addCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductAddViewModel.AddCommand"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.Image">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.ModifyPageViewModel.image"/>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductAddViewModel.AddCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductAddViewModel.Add"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.Ref_Alcampo">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.ModifyPageViewModel.ref_Alcampo"/>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductDetailsViewModel.Product">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductDetailsViewModel.product"/>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.Ref_Carrefour">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.ModifyPageViewModel.ref_Carrefour"/>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductDetailsViewModel.decreaseCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductDetailsViewModel.DecreaseCommand"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.Stock">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.ModifyPageViewModel.stock"/>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductDetailsViewModel.DecreaseCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductDetailsViewModel.Decrease"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.Target">
+            <inheritdoc cref="F:Market_Maui_App.ViewModel.ModifyPageViewModel.target"/>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductsViewModel.IsRefreshing">
-            <inheritdoc cref="F:Market_Maui_App.ViewModel.ProductsViewModel.isRefreshing"/>
+        <member name="F:Market_Maui_App.ViewModel.ModifyPageViewModel.deStockCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ModifyPageViewModel.DeStockCommand"/>.</summary>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductsViewModel.getProductsCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductsViewModel.GetProductsCommand"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.DeStockCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ModifyPageViewModel.DeStock"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductsViewModel.GetProductsCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductsViewModel.GetProductsAsync"/>.</summary>
+        <member name="F:Market_Maui_App.ViewModel.ModifyPageViewModel.inStockCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ModifyPageViewModel.InStockCommand"/>.</summary>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductsViewModel.goToDetailsCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductsViewModel.GoToDetailsCommand"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.InStockCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ModifyPageViewModel.InStock"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductsViewModel.GoToDetailsCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductsViewModel.GoToDetails(Market_Maui_App.Model.Product)"/>.</summary>
+        <member name="F:Market_Maui_App.ViewModel.ModifyPageViewModel.deTargetCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ModifyPageViewModel.DeTargetCommand"/>.</summary>
         </member>
-        <member name="F:Market_Maui_App.ViewModel.ProductsViewModel.goToAddCommand">
-            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ProductsViewModel.GoToAddCommand"/>.</summary>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.DeTargetCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ModifyPageViewModel.DeTarget"/>.</summary>
         </member>
-        <member name="P:Market_Maui_App.ViewModel.ProductsViewModel.GoToAddCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ProductsViewModel.GoToAdd"/>.</summary>
+        <member name="F:Market_Maui_App.ViewModel.ModifyPageViewModel.inTargetCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ModifyPageViewModel.InTargetCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.InTargetCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ModifyPageViewModel.InTarget"/>.</summary>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.ModifyPageViewModel.addCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ModifyPageViewModel.AddCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.AddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ModifyPageViewModel.Add"/>.</summary>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.ModifyPageViewModel.applyCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ModifyPageViewModel.ApplyCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.ApplyCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ModifyPageViewModel.Apply"/>.</summary>
+        </member>
+        <member name="F:Market_Maui_App.ViewModel.ModifyPageViewModel.backCommand">
+            <summary>The backing field for <see cref="P:Market_Maui_App.ViewModel.ModifyPageViewModel.BackCommand"/>.</summary>
+        </member>
+        <member name="P:Market_Maui_App.ViewModel.ModifyPageViewModel.BackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Market_Maui_App.ViewModel.ModifyPageViewModel.Back"/>.</summary>
         </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
             <summary>
