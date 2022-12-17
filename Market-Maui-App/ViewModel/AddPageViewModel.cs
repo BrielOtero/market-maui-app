@@ -65,6 +65,6 @@ public partial class AddPageViewModel : BaseViewModel
 
         var product = new Product(Name, Image, Stock, Target, Ref_Alcampo, Ref_Carrefour);
         await productService.PostProduct(product);
-
+        await Shell.Current.GoToAsync("..", true);
     }
 }

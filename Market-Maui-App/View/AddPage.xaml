@@ -20,15 +20,27 @@
              CornerRadius="20"/>
 
         <VerticalStackLayout  Grid.Row="0" Margin="20,50,20,0" Spacing="10">
+
             <Label Text="Name:" Style="{DynamicResource Low}"/>
-            <Entry Placeholder="Name" Text="{Binding Name}"/>
+            <Border Style="{DynamicResource EntryBorder}">
+                <Entry Placeholder="Name" Text="{Binding Name}" Style="{DynamicResource Entry}"/>
+            </Border>
+
             <Label Text="Url Image:" Style="{DynamicResource Low}"/>
-            <Entry Placeholder="Url Image" Text="{Binding Image}"/>
+            <Border Style="{DynamicResource EntryBorder}">
+                <Entry Placeholder="Url Image" Text="{Binding Image}"  Style="{DynamicResource Entry}"/>
+            </Border>
+
             <Label Text="Reference Alcampo:" Style="{DynamicResource Low}"/>
-            <Entry Placeholder="Reference Alcampo"  Text="{Binding Ref_Alcampo}"/>
+            <Border Style="{DynamicResource EntryBorder}">
+                <Entry Placeholder="Reference Alcampo"  Text="{Binding Ref_Alcampo}"  Style="{DynamicResource Entry}"/>
+            </Border>
+
             <Label Text="Reference Carrefour:" Style="{DynamicResource Low}"/>
-            <Entry Placeholder="Reference Carrefour" Text="{Binding Ref_Carrefour}"/>
-            
+            <Border Style="{DynamicResource EntryBorder}">
+                <Entry Placeholder="Reference Carrefour" Text="{Binding Ref_Carrefour}"  Style="{DynamicResource Entry}"/>
+            </Border>
+
             <HorizontalStackLayout Spacing="20" HorizontalOptions="Fill">
                 <Label Text="Stock" VerticalTextAlignment="Center" FontSize="22"  MinimumWidthRequest="80"/>
                 <Button Text="-" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddPageViewModel}}, Path=DeStockCommand}"/>
@@ -46,7 +58,7 @@
 
         </VerticalStackLayout>
 
-        <Button Text="Add" Grid.Row="1" Style="{StaticResource ButtonOutline}" Margin="20,50,20,20" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddPageViewModel}}, Path=AddCommand}"/>
+        <Button Text="Add" Grid.Row="1" Margin="20,50,20,20" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddPageViewModel}}, Path=AddCommand}"/>
     </Grid>
 
 

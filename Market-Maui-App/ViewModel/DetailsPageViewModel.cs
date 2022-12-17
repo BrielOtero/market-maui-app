@@ -24,12 +24,4 @@ public partial class DetailsPageViewModel : BaseViewModel
         await productService.DecreaseStock(Product);
     }
 
-    [RelayCommand]
-    async Task GoToModify()
-    {
-        await Shell.Current.GoToAsync(nameof(ModifyPage), true, new Dictionary<string, object>
-        {
-            { "Product",product }
-        });
-    }
 }

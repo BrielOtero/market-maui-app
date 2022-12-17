@@ -9,14 +9,19 @@ public class Product
 
     [JsonPropertyName("name")]
     public string Name { get; set; }
+
     [JsonPropertyName("image")]
     public string Image { get; set; }
+
     [JsonPropertyName("stock")]
     public int Stock { get; set; }
+
     [JsonPropertyName("target_stock")]
     public int Target_Stock { get; set; }
+
     [JsonPropertyName("ref_alcampo")]
     public string Ref_Alcampo { get; set; }
+
     [JsonPropertyName("ref_carrefour")]
     public string Ref_Carrefour { get; set; }
 

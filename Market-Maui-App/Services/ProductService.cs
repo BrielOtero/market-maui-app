@@ -7,40 +7,77 @@ namespace Market_Maui_App.Services;
 public class ProductService
 {
     HttpClient httpClient;
+    string apiUrl;
+
+    private List<Product> productList = new();
+    public List<Product> ProductList
+    {
+        get => productList;
+        set => productList = value;
+    }
+
+    public bool NeedDataRefresh = false;
+
 
     public ProductService()
     {
         this.httpClient = new HttpClient();
+        apiUrl = "https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products";
     }
-    List<Product> productList;
 
     public async Task<List<Product>> GetProducts()
     {
-        var response = await httpClient.GetAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products");
+        var response = await httpClient.GetAsync(apiUrl);
         if (response.IsSuccessStatusCode)
         {
-            productList = await response.Content.ReadFromJsonAsync<List<Product>>();
+            ProductList = await response.Content.ReadFromJsonAsync<List<Product>>();
+            NeedDataRefresh = true;
         }
 
-        return productList;
+        return ProductList;
     }
     public async Task PostProduct(Product product)
     {
         var payload = JsonSerializer.Serialize(product);
         StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
-        Trace.WriteLine(payload);
-        await httpClient.PostAsync("https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products", content);
-
+        var response = await httpClient.PostAsync(apiUrl, content);
+        if (response.IsSuccessStatusCode)
+        {
+            ProductList.Add(product);
+            NeedDataRefresh = true;
+        }
     }
     public async Task DecreaseStock(Product product)
     {
         string payload = $"{{\"stock\":{product.Stock}}}";
-        Debug.WriteLine(payload);
-        StringContent content = new StringContent( payload, Encoding.UTF8, "application/json");
+        StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
 
-        await httpClient.PatchAsync($"https://market-nodejs-mysql-rest-api-production.up.railway.app/api/products/{product.Id}", content);
+        var response = await httpClient.PatchAsync($"{apiUrl}/{product.Id}", content);
 
-        productList = await GetProducts();
+        if (response.IsSuccessStatusCode)
+        {
+            var item = productList.Find(x => x.Id == product.Id);
+            ProductList[productList.IndexOf(item)].Stock = product.Stock;
+            NeedDataRefresh = true;
+        }
+
+    }
+
+    public async Task UpdateProduct(Product product, int id)
+    {
+        var payload = JsonSerializer.Serialize(product);
+        StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
+
+        var response = await httpClient.PatchAsync($"{apiUrl}/{id}", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var item = productList.Find(x => x.Id == id);
+            var index = productList.IndexOf(item);
+            ProductList[index] = product;
+            ProductList[index].Id = id;
+            NeedDataRefresh = true;
+        }
     }
 }
 

@@ -7,15 +7,6 @@
     x:DataType="viewmodel:DetailsPageViewModel"
     BackgroundColor="{StaticResource Primary}">
     
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem 
-            IconImageSource="edit.png"
-            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DetailsPageViewModel}}, Path=GoToModifyCommand}"/>
-    </ContentPage.ToolbarItems>
-
-  
-
     <ScrollView>
         <Grid RowDefinitions="Auto,Auto,*,Auto">
             <BoxView
@@ -24,7 +15,7 @@
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"/>
 
-            <Border StrokeShape="RoundRectangle 80"
+            <Border StrokeShape="RoundRectangle 15"
                     Grid.Row="0"
                     Stroke="White"
                     StrokeThickness="8"
@@ -42,7 +33,7 @@
                         WidthRequest="160"/>
             </Border>
 
-            <Label Style="{StaticResource LargeLabel}" 
+            <Label 
                    Grid.Row="1"
                    TextColor="White"
                    FontSize="30"
@@ -58,7 +49,7 @@
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"
                 Margin="0,0,0,-20"
-                CornerRadius="20"/>
+                CornerRadius="15"/>
 
             <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
                 <Frame Style="{DynamicResource Edit}">
