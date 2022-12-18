@@ -9,52 +9,76 @@
     <Grid 
        ColumnDefinitions="*"
        RowDefinitions="*,Auto">
-
         <BoxView 
              Style="{DynamicResource Dinamic}"
-             Grid.RowSpan="2"
+             Grid.RowSpan="1"
              HorizontalOptions="Fill"
              VerticalOptions="Fill"
-             Margin="0,0,0,-20"
+             Margin="0,0,0,-0"
              CornerRadius="15"/>
+        <ScrollView>
 
-        <VerticalStackLayout  Grid.Row="0" Margin="10,50,10,0" Spacing="10">
-            <Label Text="Name:" Style="{DynamicResource Low}"/>
-            <Border Style="{DynamicResource EntryBorder}">
-                <Entry Placeholder="Name" Text="{Binding Name}" Style="{DynamicResource Entry}"/>
-            </Border>
-            
-            <Label Text="Url Image:" Style="{DynamicResource Low}"/>
-            <Border Style="{DynamicResource EntryBorder}">
-                <Entry Placeholder="Url Image" Text="{Binding Image}" Style="{DynamicResource Entry}"/>
-            </Border>
-            
-            <Label Text="Reference Alcampo:" Style="{DynamicResource Low}"/>
-            <Border Style="{DynamicResource EntryBorder}">
-                <Entry Placeholder="Reference Alcampo"  Text="{Binding Ref_Alcampo}" Style="{DynamicResource Entry}"/>
-            </Border>
-            
-            <Label Text="Reference Carrefour:" Style="{DynamicResource Low}"/>
-            <Border Style="{DynamicResource EntryBorder}">
-                <Entry Placeholder="Reference Carrefour" Text="{Binding Ref_Carrefour}" Style="{DynamicResource Entry}"/>
-            </Border>
+            <VerticalStackLayout  Grid.Row="0" Margin="10,50,10,50" Spacing="10">
+                <Label Text="Name:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="Name" Text="{Binding Name}" Style="{DynamicResource Entry}"/>
+                </Border>
 
-            <HorizontalStackLayout Spacing="20" HorizontalOptions="Fill">
-                <Label Text="Stock" VerticalTextAlignment="Center" FontSize="22"  MinimumWidthRequest="80"/>
-                <Button Text="-" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=DeStockCommand}"/>
-                <Label Text="{x:Binding Stock}" VerticalTextAlignment="Center" FontSize="22"/>
-                <Button Text="+" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=InStockCommand}"/>
-            </HorizontalStackLayout>
+                <Label Text="Url Image:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="Url Image" Text="{Binding Image}" Style="{DynamicResource Entry}"/>
+                </Border>
 
-            <HorizontalStackLayout Spacing="20" HorizontalOptions="Fill">
-                <Label Text="Target" VerticalTextAlignment="Center" FontSize="22" MinimumWidthRequest="80"/>
-                <Button Text="-" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=DeTargetCommand}"/>
-                <Label Text="{x:Binding Target}" VerticalTextAlignment="Center" FontSize="22"/>
-                <Button Text="+" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=InTargetCommand}"/>
-            </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Fill">
+                    <Label Text="Stock" VerticalTextAlignment="Center" FontSize="22"  MinimumWidthRequest="80"/>
+                    <Button Text="-" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=DeStockCommand}"/>
+                    <Label Text="{x:Binding Stock}" VerticalTextAlignment="Center" FontSize="22"/>
+                    <Button Text="+" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=InStockCommand}"/>
+                </HorizontalStackLayout>
 
-        </VerticalStackLayout>
-        <Button Text="Save Changes" Grid.Row="1" Margin="20,50,20,20" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=ApplyCommand}"/>
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Fill">
+                    <Label Text="Target" VerticalTextAlignment="Center" FontSize="22" MinimumWidthRequest="80"/>
+                    <Button Text="-" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=DeTargetCommand}"/>
+                    <Label Text="{x:Binding Target}" VerticalTextAlignment="Center" FontSize="22"/>
+                    <Button Text="+" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=InTargetCommand}"/>
+                </HorizontalStackLayout>
+
+                <Label Text="Quantity:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="Quantity" Keyboard="Numeric" Text="{Binding Quantity}" Style="{DynamicResource Entry}"/>
+                </Border>
+                <Label Text="Measurement:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="g, Kg, litros" Text="{Binding Measurement}" Style="{DynamicResource Entry}"/>
+                </Border>
+
+                <Label Text="Reference Alcampo:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="Reference Alcampo"  Text="{Binding Ref_Alcampo}" Style="{DynamicResource Entry}"/>
+                </Border>
+
+                <Label Text="Quantity Alcampo:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="Quantity Alcampo" Keyboard="Numeric" Text="{Binding Quantity_Alcampo}" Style="{DynamicResource Entry}"/>
+                </Border>
+
+                <Label Text="Reference Carrefour:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="Reference Carrefour" Text="{Binding Ref_Carrefour}" Style="{DynamicResource Entry}"/>
+                </Border>
+
+                <Label Text="Quantity Carrefour:" Style="{DynamicResource Low}"/>
+                <Border Style="{DynamicResource EntryBorder}">
+                    <Entry Placeholder="Quantity Carrefour" Keyboard="Numeric" Text="{Binding Quantity_Carrefour}" Style="{DynamicResource Entry}"/>
+                </Border>
+
+
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Text="Save Changes" Grid.Row="1" Margin="20,5,20,5" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=ApplyCommand}"/>
     </Grid>
 </ContentPage>
     

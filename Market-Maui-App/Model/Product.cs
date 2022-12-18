@@ -19,31 +19,38 @@ public class Product
     [JsonPropertyName("target_stock")]
     public int Target_Stock { get; set; }
 
+    [JsonPropertyName("quantity")]
+    public double Quantity { get; set; }
+
+    [JsonPropertyName("measurement")]
+    public string Measurement { get; set; }
+
     [JsonPropertyName("ref_alcampo")]
     public string Ref_Alcampo { get; set; }
+
+    [JsonPropertyName("quantity_alcampo")]
+    public double Quantity_Alcampo { get; set; }
 
     [JsonPropertyName("ref_carrefour")]
     public string Ref_Carrefour { get; set; }
 
+    [JsonPropertyName("quantity_carrefour")]
+    public double Quantity_Carrefour { get; set; }
 
-    public Product(string name, string image, int stock, int target_Stock, string ref_Alcampo, string ref_Carrefour)
+
+
+    public Product(string name, string image, int stock, int target_Stock, double quantity, string measurement, string ref_Alcampo, double quantity_Alcampo, string ref_Carrefour, double quantity_Carrefour)
     {
         Name = name;
         Image = image;
         Stock = stock;
+        Quantity = quantity;
         Target_Stock = target_Stock;
+        Measurement = measurement;
         Ref_Alcampo = ref_Alcampo;
+        Quantity_Alcampo = quantity_Alcampo;
         Ref_Carrefour = ref_Carrefour;
+        Quantity_Carrefour = quantity_Carrefour;
     }
 
-    //public Product(int id, string name, string image, int stock, int target_Stock, string ref_Alcampo, string ref_Carrefour)
-    //{
-    //    Id = id;
-    //    Name = name;
-    //    Image = image;
-    //    Stock = stock;
-    //    Target_Stock = target_Stock;
-    //    Ref_Alcampo = ref_Alcampo;
-    //    Ref_Carrefour = ref_Carrefour;
-    //}
 }

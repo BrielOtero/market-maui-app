@@ -1,7 +1,6 @@
 ﻿
 
 namespace Market_Maui_App.ViewModel;
-
 public partial class AddPageViewModel : BaseViewModel
 {
     public AddPageViewModel(ProductService productService)
@@ -18,15 +17,21 @@ public partial class AddPageViewModel : BaseViewModel
     [ObservableProperty]
     private string image;
     [ObservableProperty]
-    private string ref_Alcampo;
-    [ObservableProperty]
-    private string ref_Carrefour;
-
-
-    [ObservableProperty]
     private int stock;
     [ObservableProperty]
     private int target;
+    [ObservableProperty]
+    private double quantity;
+    [ObservableProperty]
+    private string measurement;
+    [ObservableProperty]
+    private string ref_Alcampo;
+    [ObservableProperty]
+    private double quantity_Alcampo;
+    [ObservableProperty]
+    private string ref_Carrefour;
+    [ObservableProperty]
+    private double quantity_Carrefour;
 
     [RelayCommand]
     async Task DeStock()
@@ -57,13 +62,13 @@ public partial class AddPageViewModel : BaseViewModel
     [RelayCommand]
     async Task Add()
     {
-        if (String.IsNullOrEmpty(Name) || String.IsNullOrEmpty(Image) || String.IsNullOrEmpty(Ref_Alcampo) || String.IsNullOrEmpty(Ref_Carrefour))
+        if (String.IsNullOrEmpty(Name) || String.IsNullOrEmpty(Image) || String.IsNullOrEmpty(Ref_Alcampo) || Double.IsNaN(Quantity_Alcampo) || String.IsNullOrEmpty(Ref_Carrefour) || Double.IsNaN(Quantity_Carrefour))
         {
-            await Shell.Current.DisplayAlert("Error!", Name + Image + Ref_Alcampo + Ref_Carrefour, "Ok");
+            await Shell.Current.DisplayAlert("Error!", "Fill the fields", "Ok");
             return;
         }
 
-        var product = new Product(Name, Image, Stock, Target, Ref_Alcampo, Ref_Carrefour);
+        var product = new Product(Name, Image, Stock, Target, Quantity, Measurement, Ref_Alcampo, Quantity_Alcampo, Ref_Carrefour, Quantity_Carrefour);
         await productService.PostProduct(product);
         await Shell.Current.GoToAsync("..", true);
     }
