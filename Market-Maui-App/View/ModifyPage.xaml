@@ -42,7 +42,7 @@
                     <Label Text="{x:Binding Target}" VerticalTextAlignment="Center" FontSize="22"/>
                     <Button Text="+" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ModifyPageViewModel}}, Path=InTargetCommand}"/>
                 </HorizontalStackLayout>
-
+                <Picker Title="Quantity" />
                 <Label Text="Quantity:" Style="{DynamicResource Low}"/>
                 <Border Style="{DynamicResource EntryBorder}">
                     <Entry Placeholder="Quantity" Keyboard="Numeric" Text="{Binding Quantity}" Style="{DynamicResource Entry}"/>

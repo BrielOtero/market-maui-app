@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugFramework>net7.0-android33.0</ActiveDebugFramework>
-    <ActiveDebugProfile>Microsoft Corporation Subsystem for Android(TM) (Android 13.0 - API 33)</ActiveDebugProfile>
+    <ActiveDebugProfile>Pixel 6 Pro API 33 (Android 13.0 - API 33)</ActiveDebugProfile>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
     <DefaultDevice>Pixel_6_Pro_API_33</DefaultDevice>
     <SelectedDevice>pixel_5_-_api_33</SelectedDevice>

@@ -90,11 +90,19 @@
                                                                 -->
                                                             </Border>
                                                             <VerticalStackLayout Padding="0,10,0,10" >
-                                                                <Label  Style="{DynamicResource MediumMain}" Text="{Binding Name}" VerticalOptions="StartAndExpand" />
-                                                                <BoxView Style="{DynamicResource DinamicMain}"/>
+                                                                <HorizontalStackLayout Spacing="10" VerticalOptions="End" >
+                                                                    <Label LineBreakMode="WordWrap" Style="{DynamicResource MediumMain}" Text="{Binding Name}" VerticalOptions="StartAndExpand" />
+                                                                    <Label LineBreakMode="WordWrap" Style="{DynamicResource MediumMain}" Text="{Binding Quantity}" VerticalOptions="StartAndExpand" />
+                                                                    <Label LineBreakMode="WordWrap" Style="{DynamicResource MediumMain}" Text="{Binding Measurement}" VerticalOptions="StartAndExpand" />
+                                                                </HorizontalStackLayout>
+                                                                    <BoxView Style="{DynamicResource DinamicMain}"/>
                                                                 <HorizontalStackLayout Spacing="10" VerticalOptions="End">
                                                                     <Image  Aspect="AspectFit" HeightRequest="25" Source="stock_color.png"/>
                                                                     <Label Style="{DynamicResource LowMain}" Text="{Binding Stock}"/>
+                                                                </HorizontalStackLayout>
+                                                                <HorizontalStackLayout Spacing="10" VerticalOptions="End">
+                                                                    <Image  Aspect="AspectFit" HeightRequest="25" Source="goal_color.png"/>
+                                                                    <Label Style="{DynamicResource LowMain}" Text="{Binding Target_Stock}"/>
                                                                 </HorizontalStackLayout>
                                                             </VerticalStackLayout>
                                                         </HorizontalStackLayout>

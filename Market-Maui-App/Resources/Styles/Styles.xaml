@@ -238,7 +238,7 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SecondaryDark}, Dark={StaticResource SecondaryLight}}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
-        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontSize" Value="18" />
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
